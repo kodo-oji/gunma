@@ -11,6 +11,8 @@ $count = isset($_POST['count']) ? htmlspecialchars($_POST['count'], ENT_QUOTES, 
 session_start();
 if (isset($_SESSION['products'])) {
     $products = $_SESSION['products'];
+    // カートに件数表示
+    $product_count = array_sum(array_column($products, 'count'));
     foreach ($products as $key => $product) {
         if ($key == $name) {
             $count = (int)$count + (int)$product['count'];
@@ -62,6 +64,10 @@ $products = isset($_SESSION['products']) ? $_SESSION['products'] : [];
                 <a href="cart.php">
                     <i class="bi bi-bag-fill"></i>
                     カートを見る
+                    <!-- カートからなら表示なし -->
+                    <?php if ($product_count > 0):?>
+                        <div class="cart-counts"><?= $product_count ?></div>
+                    <?php endif; ?>
                 </a>
             </nav>
             <ul>
