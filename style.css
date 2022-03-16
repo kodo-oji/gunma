@@ -123,6 +123,7 @@ select {
     text-align: right;
     margin-right: 80px;
     color: #333;
+    position: relative;
 }
 
 .products .container nav a i {
@@ -170,6 +171,22 @@ select {
     color: red;
     font-weight: bold;
     font-size: 20px;
+}
+
+/* カート表示件数 */
+.products .container .cart-counts {
+    background-color: #fa4616;
+    border-radius: 2.4rem;
+    color: #fff;
+    /* font-size: 1.2rem;
+    font-weight: 700; */
+    height: 2.4rem;
+    line-height: 2.4rem;
+    position: absolute;
+    right: 0.1rem;
+    text-align: center;
+    /* top: -0.4rem; */
+    width: 2.4rem;
 }
 
 /* カート 
